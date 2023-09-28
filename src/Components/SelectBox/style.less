@@ -1,0 +1,42 @@
+@import '../../_styles/variable.less';
+.select-cont {
+    padding: @form-comp-padding;
+    label {
+        font-size: @font-sm;
+        display: block;
+    }
+    .disabledField {
+        color: "rgb(177 177 177)";
+        font-weight:200;
+    }
+    .invalid-feedback {
+        font-size: @font-sm;
+        display: block;
+    }
+    .MuiSelect-root,.MuiSelect-select {
+        font-size: @font-sm !important;
+        padding: 10px 16px !important;
+        color: @font-color;
+    }
+    .MuiFormControl-root {
+        margin: 0 !important;
+    }
+    .Mui-error{
+        margin-left: 0;
+    }
+    .error-border {
+        border: 2px solid #d32f2f;
+    }
+    .MuiFilledInput-root {
+        &::after {
+            border-bottom: none !important;
+        }
+    }
+    .error-after {
+        .MuiFilledInput-root {
+            &::after {
+                border-bottom: 2px solid #d32f2f !important;
+            }
+        }
+    }
+}

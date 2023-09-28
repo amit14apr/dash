@@ -1,0 +1,48 @@
+{
+    "Login": {
+        "TitleText_1": "Welcome to Digital Inovation",
+        "TitleText_2": " & Audit Management",
+        "SignInText": "Sign in to your account below",
+        "UserNameText": "E-mail address",
+        "PasswordText": "Password",
+        "RememberMeText": "Remember me",
+        "ForgetPasswordText": "Forgot Password?",
+        "AccountConfirmationText": "Don't have an account?",
+        "CreateAccountLinkText": "Create an account"
+    },
+    "Registration": {
+        "CreateAccountText": "Create your account",
+        "FirstNameText": "First Name",
+        "LastNameText": "Last Name",
+        "EmailText": "E-mail Address",
+        "PasswordText": "Password",
+        "ConfirmPasswordText": "Confirm Password",
+        "CountryText": "State",
+        "AlreadyHaveAccountText": "Already have an account?",
+        "LoginLinkText": "Login"
+    },
+    "ForgetPassword": {
+        "BackToLogin": "Back To Login",
+        "TitleText": "Forgot Your Password?",
+        "InfoText_1": "Enter the e-mail address associated with your account, and ",
+        "InfoText_2": "we will send you instructions to reset your password",
+        "EmailText": "E-mail Address" 
+    },
+    "ResetPassword": {
+        "TitleText": "Reset Your Password",
+        "PasswordText": "Password",
+        "ConfirmPasswordText": "Confirm Password"
+    },
+    "SuccessComponent": {
+        "SuccessTitleText": "Success!",
+        "EmailTitleText": "E-mail has been sent!",
+        "EmailInfoText": "We have sent a password change instruction to your e-mail address.",
+        "ResetPasswordInfoText": "Your new password has been successfully saved.",
+        "RegistrationInfoText": "Your account has been successfully created.",
+        "ResetPasswordLinktext_1": " Did not receive the reset link?",
+        "ResetPasswordLinktext_2": "Resend"
+    },
+    "FooterText": {
+        "CopyRightText": "megaspeedcargo 2023 All rights reserved"
+    }
+}

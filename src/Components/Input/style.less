@@ -1,0 +1,36 @@
+@import '../../_styles/variable.less';
+.input-cont {
+    padding: @form-comp-padding;
+    label {
+        font-size: @font-sm;
+        display: block;
+    }
+    input {
+        width: 100%;
+    }
+    ::placeholder{
+        color: @font-color;
+    }
+    .MuiFilledInput-input{
+        padding: 10px;
+       
+    }
+    .MuiFilledInput-root {
+        &::after {
+            border-bottom: none !important;
+        }
+    }
+    .Mui-error {
+        margin-left: 0;
+    }
+    .error-border {
+        border: 2px solid #d32f2f;
+    }
+    .error-after {
+        .MuiFilledInput-root {
+            &::after {
+                border-bottom: 2px solid #d32f2f !important;
+            }
+        }
+    }
+}
