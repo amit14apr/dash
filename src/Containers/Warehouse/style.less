@@ -1,0 +1,75 @@
+@import '../../_styles/variable.less';
+.WarehouseLayout {
+    background-color: #F3F3F6;
+    width: 100%;
+    .dashboardTopbar{
+        background-color: #fff;
+    }
+    .logo{
+        margin: 10%;
+        width: 120px;
+        height: 24px;
+    }
+    .MuiListItemIcon-root{
+        min-width: 36px;
+    }
+    .MuiFilledInput-input {
+        padding-bottom: 12px;
+    }
+    .MuiTextField-root {
+        width: 50ch !important;
+        margin: 0 5px auto !important;
+    }
+    .MuiSelect-filled { 
+        width: 10ch ;
+    }
+    .MuiButton-root {
+        border-radius: 0 !important;
+        &:hover {
+            border-radius: 0 !important;
+            background-color: @btn-bg-color;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+.button-cont {
+    padding: @form-comp-padding;
+    .MuiButton-containedPrimary {
+        background-color: @btn-bg-color;
+        text-transform: none;
+        color: @btn-font-color;
+    }
+    .MuiButton-root {
+        border-radius: 0 !important;
+        &:hover {
+            border-radius: 0 !important;
+            background-color: @btn-bg-color;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.tableData {
+        margin-top:20px;
+        & thead th {
+            font-weight:700;
+            color: #170f4f;
+            background-color: #d0d0d0;
+            width: 120px;
+        }
+        & tbody td {
+            font-weight: 400;
+            background-color: #fff;
+        }
+        & tbody tr:hover {
+            background-color: #E8E7EE;
+        }
+    }
+    .tablePagination {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

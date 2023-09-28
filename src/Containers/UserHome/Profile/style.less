@@ -1,0 +1,55 @@
+@import '../../../_styles/variable.less';
+
+.ProfileContainer {
+    min-width: 150px;
+    display: inline-flex;
+    padding-top:15px;
+    cursor: pointer;
+    user-select: none;
+    .MuiIconButton-root {
+        &:focus {
+            outline: none;
+        }
+        span {
+            margin-left: 0 !important;
+        }
+    }
+    .ArrowProfile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .MuiButtonBase-root {
+            padding-left: 8px;
+        }
+        .MuiIconButton-root {
+            &:hover {
+                background: none !important;
+            }
+        }
+    }
+   
+    .UserRole {
+       
+        font-weight: 700;
+        font-size: 9px;
+        line-height: 11px;
+        /* identical to box height */
+        color: #A29FB9;
+
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    .UserName {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.001em;
+        color: #170F4F;
+    }
+    .MuiSvgIcon-root {
+        font-size: 1.5rem;
+    }
+
+
+}

@@ -1,0 +1,38 @@
+@import '../../../_styles/variable.less';
+.StepperForm {
+    a{
+        text-decoration: none;
+    }
+    font-size: @font-sm !important;
+    width: 550px;
+    .MuiSvgIcon-root {
+        font-size: 24px !important;        
+    }
+    .Mui-active {
+        color: #170f4f !important; 
+    }
+    .Mui-completed {
+        color: #170f4f !important; 
+    }
+    .MuiStepLabel-root {
+        align-items: flex-start;
+    }
+    .MuiStepConnector-root{
+        left: calc(-85% + 20px);
+        right: calc(85% + 20px);
+    }
+    .MuiStepLabel-alternativeLabel {
+        text-align: left !important;
+    }
+    .MuiGrid-root{
+        max-width: 100% !important; 
+    }
+    .stepperButton {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .button-cont {
+        padding-left: 10px;
+    }
+}

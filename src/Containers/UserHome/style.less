@@ -1,0 +1,66 @@
+@import '../../_styles/variable.less';
+
+.dashboardLayout {
+    background-color: #F3F3F6;
+    width: 100%;
+    .MuiFilledInput-root {
+        border-radius: 0px;
+    }
+    .dashboardTopbar {
+        background-color: #fff;
+    }
+    .logo {
+        margin: 10%;
+        width: 120px;
+        height: 24px;
+        background-color: #fff;
+    }
+    .MuiListItemText-root {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .MuiListItemIcon-root {
+        min-width: 50px;
+    }
+    .SideMenu {
+        .MuiButtonBase-root {
+            display: flex;
+            padding: auto;
+        }
+    }
+    header {
+       
+        .MuiToolbar-root {
+            max-height: 65px !important;
+        }
+        .MuiSelect-select {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+            padding-right: 10px !important;
+        }
+    }
+    
+    .navlinks {
+         color: rgb(162 159 185);
+         text-decoration: none;
+    }
+    .activeNavLinks {
+        color:rgb(255, 255, 255);
+        & img {
+            color:rgb(255, 255, 255);
+        }
+    }
+}
+.MuiButton-root {
+    border-radius: 0 !important;
+
+    &:hover {
+        border-radius: 0 !important;
+        background-color: @btn-bg-color;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
