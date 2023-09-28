@@ -1,0 +1,32 @@
+@import '../../_styles/variable.less';
+.login-module {
+    background-color: #fff;
+    color: @font-color;
+    .login-form{
+        color: @font-color;
+    }
+    .MuiFilledInput-root {
+        border-radius: 0px;
+    }
+    .reminder-forgot-cont{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        a{
+            margin-top: 8px;
+            color: #00BAC7;
+            text-decoration: none;
+        }
+    }
+    .MuiFilledInput-root {
+        &::after {
+            border-bottom: 2px solid #170f4f;
+        }
+    }
+}
+.MuiDivider-root  {
+    width:40% !important;
+    .MuiChip-filled { 
+        background-color: #fff !important;
+    }
+}
