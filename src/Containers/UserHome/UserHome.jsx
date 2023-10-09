@@ -32,16 +32,17 @@ import { Profile } from './Profile';
 import { Country } from './Country';
 import { Breadcrumbs } from '../../Components';
 import { userActions } from '../../_actions';
+import TextField from '@mui/material/TextField';
 
 import './style.less';
 const drawerWidth = 240;
 
 function UserHome() {
     
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(() => {
-       // dispatch(userActions.getUserRoles());
+        dispatch(userActions.getUserRoles());
     }, []);
 
     const [openWarehouse, setOpenWarehouse] = React.useState(true);
@@ -59,15 +60,15 @@ function UserHome() {
     };
     const userRoles = useSelector(state => state.users.roles)
     const hasAccessToPhotoMgmtList = userRoles?.indexOf('PHOTO_MANG_LISTING') > -1;
-    const hasAccessToUserist = true || userRoles?.indexOf('USERS_LIST') > -1;
+    const hasAccessToUserist = userRoles?.indexOf('USERS_LIST') > -1;
 
     
     const listItemData = [
         { label: "Dashboard", link: "/dashboard", icon: DashboardIcon , expandMore: false, hasAccess: true},
         { label: "Task", secondLabel: "Task List", link: "/warehouse", icon: WarehouseIcon, expandMore: false, hasAccess:false },
         { label: "Contact", secondLabel: "Contact List", link: "/inventory", icon: InventoryIcon, expandMore: false, hasAccess:false },
-        { label: "User", secondLabel: "User List", link: "/user",  thirdLabel: "Register", thirdlink: "/register", icon: ArticleIcon , expandMore: true, hasAccess:true},
-        { label: "Photo Management", link: "/photomanagement", icon: PhotoManagementIcon , expandMore: false, hasAccess: true },
+        { label: "User", secondLabel: "User List", link: "/user",icon: ArticleIcon , expandMore: true, hasAccess:true},
+        { label: "Photo Management", link: "/photomanagement", icon: PhotoManagementIcon , expandMore: false, hasAccess: hasAccessToPhotoMgmtList },
     ];
 
   
@@ -119,8 +120,62 @@ function UserHome() {
                             </ListItem> 
                         ))}
                         
-                                                    
-                          
+                         <ListItemButton onClick={handleClickUser} className="navlinks">
+                            <ListItemIcon>
+                                    <img width="30" height="30" src={listItemData[3].icon}></img>
+                                </ListItemIcon>
+                            <ListItemText  primary={listItemData[3].label} />
+                            {openUser ? <ExpandLess /> : <ExpandMore />}
+                          </ListItemButton> 
+                          <Collapse in={openUser} timeout="auto" unmountOnExit>
+                          <ListItem className="navlinks" activeClassName="activeNavLinks" key={listItemData[3]}
+                                to={listItemData[3].link}
+                                component={NavLink}
+                            >
+                              <ListItemButton sx={{ pl: 6 }}>
+                                <ListItemText  primary={listItemData[3].secondLabel}  />
+                              </ListItemButton>
+                            </ListItem>
+                    
+                          </Collapse>
+
+
+                         <ListItemButton onClick={handleClickWarehouse} className="navlinks">
+                            <ListItemIcon>
+                                    <img width="30" height="30" src={listItemData[1].icon}></img>
+                                </ListItemIcon>
+                            <ListItemText  primary={listItemData[1].label} />
+                            {openWarehouse ? <ExpandLess /> : <ExpandMore />}
+                          </ListItemButton> 
+                          <Collapse in={openWarehouse} timeout="auto" unmountOnExit>
+                          <ListItem className="navlinks" activeClassName="activeNavLinks" key={listItemData[1]}
+                                to={listItemData[1].link}
+                                component={NavLink}
+                            >
+                              <ListItemButton sx={{ pl: 6 }}>
+                                <ListItemText  primary={listItemData[1].secondLabel}  />
+                              </ListItemButton>
+                            </ListItem>
+                            
+                          </Collapse>
+                          <ListItemButton onClick={handleClickInventory} className="navlinks">
+                            <ListItemIcon>
+                                    <img width="30" height="30" src={listItemData[2].icon}></img>
+                                </ListItemIcon>
+                            <ListItemText  primary={listItemData[2].label} />
+                            {openInventory ? <ExpandLess /> : <ExpandMore />}
+                          </ListItemButton>
+                          <Collapse in={openInventory} timeout="auto" unmountOnExit>
+                          <ListItem className="navlinks" activeClassName="activeNavLinks" key={listItemData[2]}
+                                to={listItemData[2].link}
+                                component={NavLink}
+                            >
+                              <ListItemButton sx={{ pl: 6  }}>
+                                <ListItemText  primary={listItemData[2].secondLabel}  />
+                              </ListItemButton>
+                            </ListItem>
+                            
+                          </Collapse>
                     </List>
                 </Drawer>
                 <Box
@@ -130,7 +185,17 @@ function UserHome() {
                     <Toolbar />
 
                     {/* <Breadcrumbs /> */}
-                    <Warehouse />
+                    <Router history={history}>
+                            <Switch>
+                                <PrivateRoute exact path="/" component={Article} />
+                                <Route exact path="/dashboard" component={Dashboard} />
+                                <Route exact path="/warehouse" component={Warehouse} />
+                                <Route exact path="/inventory" component={Inventory} />
+                                <Route exact path="/user" component={Article} />
+                                <Route exact path="/photomanagement" component={PhotoManagement} />
+                                <Redirect from="*" to="/" />
+                            </Switch>
+                    </Router>
                 </Box>
             </Box>
         </div>
